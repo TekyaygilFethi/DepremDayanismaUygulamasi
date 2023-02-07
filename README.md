@@ -15,7 +15,7 @@ Uygulamaya https://depremdayanismasi.streamlit.app/ sitesinden ulaşabilirsiniz.
 
 # Süreç Nasıl İşliyor?
 
-Uygulama 2 sekmeden oluşuyor. İlki Yardım Çağrısı:
+Uygulama 2 sekmeden oluşuyor.
 
 ## Yardım Çağrısı Sekmesi
 Yardım Çağrısı sekmesi, konumla beraber ihtiyacınızı veya mesajınız girmenizi sağlar. İster kendiniz ister endişe ettiğiniz yakınlarınız için paylaşımda bulunabilirsiniz.
