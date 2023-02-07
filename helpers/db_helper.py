@@ -1,13 +1,11 @@
 import pyodbc
 import os
 from dotenv import load_dotenv
-import streamlit as st
 
 class DbHelper:
     def __init__(self):
         load_dotenv()
-        print(st.secrets["MSSQL_CONNECTION_STRING"])
-        self.connection = pyodbc.connect(st.secrets["MSSQL_CONNECTION_STRING"], autocommit=True)
+        self.connection = pyodbc.connect(os.getenv("MSSQL_CONNECTION_STRING"), autocommit=True)
         self.cursor = self.connection.cursor()
 
     def GetData(self, sql):
