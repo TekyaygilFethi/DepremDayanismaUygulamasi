@@ -21,6 +21,8 @@ InitComponents()
 st.title("Deprem Dayanışması")
 st.caption("Deprem Dayanışması için oluşturulan platform!")
 
+st.info("UYARI: Hata alırsanız lütfen sayfayı yenileyin!")
+
 tab1, tab2 = st.tabs(["Yardım Çağrısı", "Yoğunluk Haritası"])
 
 with tab1:
