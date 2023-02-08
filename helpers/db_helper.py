@@ -8,6 +8,7 @@ class DbHelper:
         self.connection = pyodbc.connect(os.getenv("MSSQL_CONNECTION_STRING"), autocommit=True)
         self.cursor = self.connection.cursor()
 
+
     def GetData(self, sql):
         return self.cursor.execute(sql).fetchall()
 
