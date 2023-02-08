@@ -2956,13 +2956,20 @@ CREATE FUNCTION FN_SplitString (
                 Number <= LEN(@List)
                 AND SUBSTRING(@Delim + @List, [Number], DATALENGTH(@Delim) / 2) = @Delim
         ) AS y
-) CREATE PROCEDURE AddNewRecord @Province NVARCHAR(100) = NULL,
+) 
+
+
+CREATE PROCEDURE AddNewRecord @Province NVARCHAR(100) = NULL,
 @District NVARCHAR(100) = NULL,
 @Address NVARCHAR(MAX) = NULL,
 @NeedDescription NVARCHAR(100) = NULL,
 @ContactInfoDescription NVARCHAR(100) = NULL,
 @LAT NVARCHAR(10) = NULL,
-@LONG NVARCHAR(10) = NULL AS BEGIN DECLARE @ProvinceId INT;
+@LONG NVARCHAR(10) = NULL 
+AS 
+BEGIN
+
+DECLARE @ProvinceId INT;
 
 SET
     @ProvinceId = (
@@ -3008,8 +3015,11 @@ VALUES
         @ContactInfoDescription,
         GETDATE()
     )
-END CREATE PROCEDURE GetAllLatLongs @AddressIds NVARCHAR(MAX) = NULL,
-@Delimiter NVARCHAR(MAX) = NULL AS BEGIN DECLARE @AddressIdTable TABLE ([Value] NVARCHAR(MAX)) IF @AddressIds IS NOT NULL BEGIN IF @Delimiter IS NULL BEGIN
+END 
+
+
+CREATE PROCEDURE GetAllLatLongs @AddressIds NVARCHAR(MAX) = NULL,
+@Delimiter NVARCHAR(MAX) = NULL  DECLARE @AddressIdTable TABLE ([Value] NVARCHAR(MAX)) IF @AddressIds IS NOT NULL BEGIN IF @Delimiter IS NULL BEGIN
 SET
     @Delimiter = ','
 END
@@ -3039,9 +3049,13 @@ SELECT
 FROM
     Addresses a
 END
-END CREATE PROCEDURE GetHelpRecordCount @Search NVARCHAR(MAX) = NULL,
+END 
+
+CREATE PROCEDURE GetHelpRecordCount @Search NVARCHAR(MAX) = NULL,
 @StartDate DATETIME = NULL,
-@EndDate DATETIME = NULL AS BEGIN IF @Search = '' BEGIN
+@EndDate DATETIME = NULL 
+AS 
+BEGIN IF @Search = '' BEGIN
 SET
     @Search = NULL
 END
@@ -3087,8 +3101,13 @@ WHERE
         @EndDate IS NULL
         OR r.SendDate < @EndDate
     )
-END CREATE PROCEDURE GetHelpRecordCountPerProvince @RecordIds NVARCHAR(MAX) = NULL,
-@Delimiter NVARCHAR(MAX) = NULL AS BEGIN DECLARE @RecordIdsTable TABLE ([Value] NVARCHAR(MAX)) IF @RecordIds IS NOT NULL BEGIN IF @Delimiter IS NULL BEGIN
+END 
+
+CREATE PROCEDURE GetHelpRecordCountPerProvince @RecordIds NVARCHAR(MAX) = NULL,
+@Delimiter NVARCHAR(MAX) = NULL 
+AS 
+BEGIN
+ DECLARE @RecordIdsTable TABLE ([Value] NVARCHAR(MAX)) IF @RecordIds IS NOT NULL BEGIN IF @Delimiter IS NULL BEGIN
 SET
     @Delimiter = ','
 END
@@ -3132,11 +3151,17 @@ GROUP BY
 ORDER BY
     RecordCount DESC
 END
-END CREATE PROCEDURE GetHelpRecords @PageSize INT = NULL,
+END
+
+
+CREATE PROCEDURE GetHelpRecords @PageSize INT = NULL,
 @Page INT = NULL,
 @Search NVARCHAR(MAX) = NULL,
 @StartDate DATETIME = NULL,
-@EndDate DATETIME = NULL AS BEGIN IF @PageSize IS NULL BEGIN
+@EndDate DATETIME = NULL 
+AS 
+BEGIN
+ IF @PageSize IS NULL BEGIN
 SET
     @PageSize = 10
 END IF @Page IS NULL BEGIN
@@ -3205,7 +3230,13 @@ WHERE
     )
 ORDER BY
     r.SendDate DESC OFFSET (@Page) * @PageSize ROWS FETCH NEXT @PageSize ROWS ONLY
-END CREATE PROCEDURE GetProvincesAndDistricts AS BEGIN
+END 
+
+
+CREATE PROCEDURE GetProvincesAndDistricts 
+AS 
+BEGIN
+
 SELECT
     d.Name as DistrictName,
     p.Name as ProvinceName
