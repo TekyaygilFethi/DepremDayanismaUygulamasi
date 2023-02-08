@@ -6,7 +6,6 @@ import requests
 from services.redis_service import RedisService
 import models.GLOBALS as GLOBALS
 import json
-import streamlit as st
 
 db_helper = DbHelper()
 redis_client = RedisService()
@@ -23,6 +22,7 @@ def GetProvincesAndDistricts():
 
 
 def GetCurrentLocationInfo(address=None, lat_long=None):
+    my_province, my_district, my_open_address = None, None, None
     if lat_long is not None:
         my_province, my_district, my_open_address = __GetLocationInfoByLatLong(lat_long)
     else:
@@ -35,11 +35,14 @@ def GetCurrentLocationInfo(address=None, lat_long=None):
         if r.status_code not in range(200, 299):
             return None, None, None, None
 
-        results = r.json()['results'][0]
-        lat = results['geometry']['location']['lat']
-        long = results['geometry']['location']['lng']
-        lat_long = [lat, long]
-        my_province, my_district, my_open_address = __GetLocationInfoByLatLong(lat_long)
+        try:
+            results = r.json()['results'][0]
+            lat = results['geometry']['location']['lat']
+            long = results['geometry']['location']['lng']
+            lat_long = [lat, long]
+            my_province, my_district, my_open_address = __GetLocationInfoByLatLong(lat_long)
+        except:
+            pass
 
     my_province, my_district, my_open_address = __CheckProvinceAvailability(my_province, my_district, my_open_address)
 
@@ -49,7 +52,6 @@ def GetCurrentLocationInfo(address=None, lat_long=None):
 def __CheckProvinceAvailability(my_province, my_district, my_open_address):
     my_province_and_districts = GetProvinceDistrictDict()
 
-    # print("E:", any(my_district in districts for districts in my_province_and_districts.values()), my_province, my_district, my_open_address)
     if my_province not in my_province_and_districts:
         my_province = "İSTANBUL"
         my_district = "ESENYURT"
