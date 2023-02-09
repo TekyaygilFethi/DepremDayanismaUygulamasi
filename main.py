@@ -3,7 +3,7 @@ from streamlit_folium import folium_static, st_folium
 from helpers import address_helper as ah, streamlit_helper as sh, streamlit_events as se
 import streamlit as st
 
-province_list = None, None
+province_list = None
 
 payload = {}
 
