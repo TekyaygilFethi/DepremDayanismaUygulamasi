@@ -34,7 +34,7 @@ Sistem açılır açılmaz konumunuz varsayılan olarak işaretli gelir. (Konum 
 
 - Adres: Bu alan zorunludur. Koordinat girip otomatik doldurtmanın yanı sıra kendiniz de bir girdi girip otomatik adres doldurtabilirsiniz. Eğer Adresi benim için otomatik doldur derseniz yazdığınız prompt'a göre adres otomatik olarak tamamlanmaktadır. Eğer bu checkbox seçili değilse yazdığınız adres otomatik tamamlanmayacaktır. Bunu test edebilmek için adres kısmına Cevahir AVM yazıp test gerçekleştirebilirsiniz
 
-- İhtiyaç/Açıklaöa: Bu alan zorunludur. İhtiyacınız ve mesajınızı bu alana yazabilirsiniz.
+- İhtiyaç/Açıklama: Bu alan zorunludur. İhtiyacınız ve mesajınızı bu alana yazabilirsiniz.
 
 - İletişim Bilgileri: Bu alan opsiyoneldir. Sizin veya adına yazdığınız sevdikleriniz için iletişim bilgierinin bulunduğu kısımdır. bu alanlar public olarak depolanmaktadır ve herkes tarafından görülebilmektedir.
 
