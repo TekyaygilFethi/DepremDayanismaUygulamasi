@@ -3019,7 +3019,9 @@ END
 
 
 CREATE PROCEDURE GetAllLatLongs @AddressIds NVARCHAR(MAX) = NULL,
-@Delimiter NVARCHAR(MAX) = NULL  DECLARE @AddressIdTable TABLE ([Value] NVARCHAR(MAX)) IF @AddressIds IS NOT NULL BEGIN IF @Delimiter IS NULL BEGIN
+@Delimiter NVARCHAR(MAX) = NULL  DECLARE @AddressIdTable TABLE ([Value] NVARCHAR(MAX)) IF @AddressIds IS NOT NULL
+BEGIN IF @Delimiter IS NULL
+BEGIN
 SET
     @Delimiter = ','
 END
@@ -3107,7 +3109,9 @@ CREATE PROCEDURE GetHelpRecordCountPerProvince @RecordIds NVARCHAR(MAX) = NULL,
 @Delimiter NVARCHAR(MAX) = NULL 
 AS 
 BEGIN
- DECLARE @RecordIdsTable TABLE ([Value] NVARCHAR(MAX)) IF @RecordIds IS NOT NULL BEGIN IF @Delimiter IS NULL BEGIN
+ DECLARE @RecordIdsTable TABLE ([Value] NVARCHAR(MAX)) IF @RecordIds IS NOT NULL
+BEGIN IF @Delimiter IS NULL
+BEGIN
 SET
     @Delimiter = ','
 END
@@ -3161,13 +3165,16 @@ CREATE PROCEDURE GetHelpRecords @PageSize INT = NULL,
 @EndDate DATETIME = NULL 
 AS 
 BEGIN
- IF @PageSize IS NULL BEGIN
+ IF @PageSize IS NULL
 SET
     @PageSize = 10
-END IF @Page IS NULL BEGIN
+END
+IF @Page IS NULL
+BEGIN
 SET
     @Page = 0
-END IF @Search = '' BEGIN
+END
+IF @Search = '' BEGIN
 SET
     @Search = NULL
 END
