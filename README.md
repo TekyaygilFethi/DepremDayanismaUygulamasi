@@ -1,7 +1,7 @@
 
 # Deprem Dayanışması
 
-Ülkecek geçirdiğimiz bu kara ve yaslı günlerde birbirimize bir nebze olsun ulaşabilmek ve yardım edebilmek adına yaptığım Deprem Dayanışma projesinin amacı, kişilerin konumlatıyla beraber ihtiyaçlarını paylaşabilmesi ve ihtiyaç sahiplerinin harita üzerinde görünüp analizinin yapılmasıdır.
+Ülkecek geçirdiğimiz bu kara ve yaslı günlerde birbirimize bir nebze olsun ulaşabilmek ve yardım edebilmek adına yaptığım Deprem Dayanışma projesinin amacı, kişilerin konumlarıyla beraber ihtiyaçlarını paylaşabilmesi ve ihtiyaç sahiplerinin harita üzerinde görünüp analizinin yapılmasıdır.
 
 # TO-DO
 [ ] Pager yapısı geliştirilecek
