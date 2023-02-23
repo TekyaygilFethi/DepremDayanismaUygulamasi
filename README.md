@@ -11,7 +11,7 @@
 [ ] Haritalar responsive hale getirilecek. Bu aşamada haritalar responsive olmadığı için mobile daha çok uyumlu olsun diye boyutu küçük oluşturuldu
 
 # Site
-https://depremdayanismasi.streamlit.app/ sitesi KVKK nedeniyle inaktif edilmiştir.
+https://depremdayanismasi.streamlit.app/ sitesi KVKK'yı ihlal etmemek için inaktif edilmiştir.
 
 # Süreç Nasıl İşliyor?
 
