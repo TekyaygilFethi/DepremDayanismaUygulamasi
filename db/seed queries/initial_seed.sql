@@ -5,16 +5,19 @@ CREATE TABLE Addresses (
     Latitude NVARCHAR(20),
     Longitude NVARCHAR(20)
 ) 
+
 CREATE TABLE Districts (
     Id INT IDENTITY PRIMARY KEY,
     Name NVARCHAR(70) NOT NULL,
     ProvinceId INT NOT NULL
 ) 
+
 CREATE TABLE Provinces (
     Id INT IDENTITY PRIMARY KEY,
     Name NVARCHAR(70) NOT NULL,
     IsActive bit
 ) 
+
 CREATE TABLE Records (
     Id INT IDENTITY PRIMARY KEY,
     Description NVARCHAR(MAX) NOT NULL,
@@ -22,6 +25,7 @@ CREATE TABLE Records (
     ContactDescription NVARCHAR(MAX),
     SendDate datetime
 )
+
 INSERT INTO
     Provinces (Id, Name, IsActive)
 VALUES
