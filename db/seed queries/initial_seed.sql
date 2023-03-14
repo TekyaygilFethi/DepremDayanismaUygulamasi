@@ -4,15 +4,18 @@ CREATE TABLE Addresses (
     DistrictId INT NOT NULL,
     Latitude NVARCHAR(20),
     Longitude NVARCHAR(20)
-) CREATE TABLE Districts (
+) 
+CREATE TABLE Districts (
     Id INT IDENTITY PRIMARY KEY,
     Name NVARCHAR(70) NOT NULL,
     ProvinceId INT NOT NULL
-) CREATE TABLE Provinces (
+) 
+CREATE TABLE Provinces (
     Id INT IDENTITY PRIMARY KEY,
     Name NVARCHAR(70) NOT NULL,
     IsActive bit
-) CREATE TABLE Records (
+) 
+CREATE TABLE Records (
     Id INT IDENTITY PRIMARY KEY,
     Description NVARCHAR(MAX) NOT NULL,
     AddressId INT NOT NULL,
